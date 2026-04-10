@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura — O Server Brazilian</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reader.css">
+</head>
+<body class="reader-page">
+    
+    <!-- Reader Container -->
+    <div class="reader-container">
+        
+        <!-- Left Page Turn Area -->
+        <div class="page-turn-zone left-zone" id="prevZone">
+            <div class="turn-hint">
+                <span class="turn-arrow">←</span>
+                <span class="turn-text">ANTERIOR</span>
+            </div>
+        </div>
+
+        <!-- Right Page Turn Area -->
+        <div class="page-turn-zone right-zone" id="nextZone">
+            <div class="turn-hint">
+                <span class="turn-text">PRÓXIMA</span>
+                <span class="turn-arrow">→</span>
+            </div>
+        </div>
+
+        <!-- Book Pages -->
+        <div class="book-wrapper">
+            
+            <!-- Left Page -->
+            <div class="book-page left-page">
+                <div class="page-content" id="leftPageContent">
+                    <!-- Content loaded by JS -->
+                </div>
+                <div class="page-number left" id="leftPageNumber"></div>
+            </div>
+
+            <!-- Center Spine -->
+            <div class="book-spine"></div>
+
+            <!-- Right Page -->
+            <div class="book-page right-page">
+                <div class="page-content" id="rightPageContent">
+                    <!-- Content loaded by JS -->
+                </div>
+                <div class="page-number right" id="rightPageNumber"></div>
+            </div>
+
+        </div>
+
+        <!-- Top Controls -->
+        <div class="reader-controls">
+            <button class="control-btn" id="menuBtn" title="Menu">
+                <span class="btn-icon">≡</span>
+            </button>
+            <div class="progress-info">
+                <span id="chapterTitle">Carregando...</span>
+            </div>
+            <button class="control-btn" id="closeBtn" title="Fechar">
+                <span class="btn-icon">✕</span>
+            </button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="reader-nav">
+            <button class="nav-btn" id="prevBtn">
+                <span class="nav-arrow">←</span>
+                <span class="nav-label">ANTERIOR</span>
+            </button>
+            
+            <div class="page-indicator">
+                <span id="currentPage">1</span> / <span id="totalPages">1</span>
+            </div>
+            
+            <button class="nav-btn" id="nextBtn">
+                <span class="nav-label">PRÓXIMA</span>
+                <span class="nav-arrow">→</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-panel">
+            <div class="menu-header">
+                <h2 class="menu-title">NAVEGAÇÃO</h2>
+                <button class="menu-close" id="menuClose">✕</button>
+            </div>
+            <div class="menu-content" id="menuContent">
+                <!-- Chapter list loaded by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Database -->
+    <script src="content-data.js"></script>
+    
+    <!-- Reader Logic -->
+    <script src="reader.js"></script>
+
+</body>
+</html>

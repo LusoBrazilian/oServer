@@ -1,0 +1,412 @@
+/* ═══════════════════════════════════════════════════════════
+   O SERVER BRAZILIAN — Estilos Ornamentais
+   Inspirado em manuscritos iluminados e arte bélica dourada
+   ═══════════════════════════════════════════════════════════ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de cores dourada/preta */
+    --gold-bright: #d4af37;
+    --gold-medium: #c19a2e;
+    --gold-dark: #8b7220;
+    --gold-accent: #f4e5b8;
+    --black-deep: #0a0a0a;
+    --black-medium: #1a1612;
+    --black-light: #2a2520;
+    --sepia: #3d3020;
+    --parchment: #f4ecd8;
+    
+    /* Sombras e brilhos */
+    --glow-gold: 0 0 20px rgba(212, 175, 55, 0.4);
+    --glow-gold-strong: 0 0 40px rgba(212, 175, 55, 0.6);
+    --shadow-deep: 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background: var(--black-deep);
+    color: var(--gold-accent);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ORNATE FRAME — Moldura decorativa
+   ═══════════════════════════════════════════════════════════ */
+
+.ornate-frame {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.corner {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: 
+        linear-gradient(45deg, var(--gold-bright) 0%, transparent 50%),
+        linear-gradient(-45deg, var(--gold-bright) 0%, transparent 50%);
+    opacity: 0.15;
+    filter: blur(1px);
+}
+
+.corner-tl {
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at top left, var(--gold-dark) 0%, transparent 70%);
+}
+
+.corner-tr {
+    top: 0;
+    right: 0;
+    background: radial-gradient(circle at top right, var(--gold-dark) 0%, transparent 70%);
+}
+
+.corner-bl {
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at bottom left, var(--gold-dark) 0%, transparent 70%);
+}
+
+.corner-br {
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle at bottom right, var(--gold-dark) 0%, transparent 70%);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INDEX PAGE — Página inicial
+   ═══════════════════════════════════════════════════════════ */
+
+.index-page {
+    background: 
+        radial-gradient(ellipse at center top, var(--sepia) 0%, var(--black-deep) 50%),
+        var(--black-deep);
+    min-height: 100vh;
+}
+
+.hero-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════ */
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-link {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-decoration: none;
+    color: var(--gold-dark);
+    transition: all 0.4s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: var(--gold-bright);
+    transition: width 0.4s ease;
+    box-shadow: var(--glow-gold);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold-bright);
+    text-shadow: var(--glow-gold);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO CONTENT
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Flourishes ornamentais */
+.flourish-top,
+.flourish-bottom {
+    width: 200px;
+    margin: 20px 0;
+    opacity: 0.6;
+}
+
+.flourish-svg {
+    width: 100%;
+    height: auto;
+    color: var(--gold-medium);
+    filter: drop-shadow(var(--glow-gold));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TITLE
+   ═══════════════════════════════════════════════════════════ */
+
+.main-title {
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title-article {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--gold-medium);
+    letter-spacing: 8px;
+    text-shadow: var(--glow-gold);
+}
+
+.title-main {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 20px;
+    color: var(--gold-bright);
+    text-shadow: 
+        0 0 30px rgba(212, 175, 55, 0.8),
+        0 0 60px rgba(212, 175, 55, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg, var(--gold-accent) 0%, var(--gold-medium) 50%, var(--gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 12px;
+    color: var(--gold-medium);
+    border-top: 1px solid var(--gold-dark);
+    border-bottom: 1px solid var(--gold-dark);
+    padding: 15px 0;
+    margin-top: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COVER IMAGE
+   ═══════════════════════════════════════════════════════════ */
+
+.cover-container {
+    position: relative;
+    margin: 50px 0;
+    max-width: 450px;
+    width: 100%;
+}
+
+.cover-glow {
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+    filter: blur(40px);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--gold-dark);
+    box-shadow: 
+        0 0 40px rgba(212, 175, 55, 0.4),
+        inset 0 0 40px rgba(0, 0, 0, 0.5),
+        var(--shadow-deep);
+    position: relative;
+    z-index: 2;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TAGLINE
+   ═══════════════════════════════════════════════════════════ */
+
+.tagline {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.tagline-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--gold-accent);
+    opacity: 0.85;
+    letter-spacing: 1px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CTA BUTTON
+   ═══════════════════════════════════════════════════════════ */
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    margin-top: 30px;
+    background: transparent;
+    border: 2px solid var(--gold-dark);
+    color: var(--gold-bright);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.cta-button:hover {
+    border-color: var(--gold-bright);
+    box-shadow: 
+        var(--glow-gold-strong),
+        inset 0 0 20px rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+}
+
+.cta-button:hover::before {
+    transform: translateX(100%);
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.button-ornament {
+    font-size: 1.2rem;
+    animation: rotate-ornament 4s linear infinite;
+}
+
+@keyframes rotate-ornament {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-footer {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-ornament {
+    font-size: 0.8rem;
+    color: var(--gold-dark);
+    margin-bottom: 10px;
+    letter-spacing: 8px;
+}
+
+.footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--gold-dark);
+    opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .main-nav {
+        gap: 30px;
+    }
+    
+    .nav-link {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+    
+    .title-article {
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+    }
+    
+    .title-main {
+        font-size: 3rem;
+        letter-spacing: 10px;
+    }
+    
+    .title-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 6px;
+    }
+    
+    .tagline-text {
+        font-size: 1.1rem;
+    }
+    
+    .cover-container {
+        max-width: 320px;
+    }
+    
+    .cta-button {
+        padding: 15px 35px;
+        font-size: 0.7rem;
+    }
+}
